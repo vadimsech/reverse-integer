@@ -7,12 +7,12 @@ namespace tmp6
         static void Main(string[] args)
         {
             Console.WriteLine(ReverseNumber(-6780));
-            Console.WriteLine(ReverseNumber(9563));
+            Console.WriteLine(ReverseNumber(1534236469));
         }
 
         static int ReverseNumber(int numberToReverse)
         {
-            int result = 0;
+            long result = 0;
             int temp;
 
             while (numberToReverse > 9 || numberToReverse < -9)
@@ -23,7 +23,12 @@ namespace tmp6
             }
             result = result * 10 + numberToReverse;
 
-            return result;
+            if (result >= int.MaxValue || result <= int.MinValue)
+            {
+                return 0;
+            }
+
+            return (int)result;
         }
     }
 }
