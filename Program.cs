@@ -6,17 +6,24 @@ namespace tmp6
     {
         static void Main(string[] args)
         {
-            int i = 90120;
+            Console.WriteLine(ReverseNumber(-6780));
+            Console.WriteLine(ReverseNumber(9563));
+        }
+
+        static int ReverseNumber(int numberToReverse)
+        {
             int result = 0;
             int temp;
-            while (i > 9 || i < -9)
+
+            while (numberToReverse > 9 || numberToReverse < -9)
             {
-                temp = i % 10;
-                i /= 10;
+                temp = numberToReverse % 10;
+                numberToReverse /= 10;
                 result = result * 10 + temp;
-            }          
-            result = result * 10 + i;
-            Console.WriteLine(result);            
+            }
+            result = result * 10 + numberToReverse;
+
+            return result;
         }
     }
 }
